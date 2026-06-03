@@ -47,7 +47,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out # Hasil kompilasi static export Next.js
+          path: ./.next/static # Hasil kompilasi static export Next.js
 
   deploy:
     environment:
