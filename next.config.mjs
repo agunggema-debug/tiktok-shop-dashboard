@@ -9,4 +9,4 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/tiktok-shop-dashboard' : '',
 };
 
-module.exports = nextConfig;
+export default nextConfig;
