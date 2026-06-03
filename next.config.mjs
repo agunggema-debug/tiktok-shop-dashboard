@@ -7,6 +7,7 @@ const nextConfig = {
   },
 
   basePath: process.env.NODE_ENV === "production" ? "/tiktok-shop-dashboard" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/tiktok-shop-dashboard/" : "",
 };
 
 export default nextConfig;
