@@ -6,6 +6,9 @@ Situs ini telah dioptimalkan untuk ekspor statis dan dideploy secara otomatis me
 
 🔗 Demo Live: https://agunggema-debug.github.io/tiktok-shop-dashboard/
 
+<img width="1911" height="933" alt="image" src="https://github.com/user-attachments/assets/b5b19d7e-6083-4fbd-bdb1-4d27fc187d82" />
+
+
 ## 🏗️ Arsitektur Sistem Produksi (Target)
 
 Dasbor ini disiapkan sebagai visualisasi awal dari sistem produksi skala penuh dengan cetak biru arsitektur berikut:
