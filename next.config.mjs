@@ -5,9 +5,12 @@ const nextConfig = {
   images: {
     unoptimized: true, // Menonaktifkan optimasi gambar dinamis karena server statis GitHub tidak mendukungnya
   },
-  // Konfigurasi basePath tanpa tanda miring ganda untuk assetPrefix
-  basePath: process.env.NODE_ENV === "production" ? "/tiktok-shop-dashboard" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/tiktok-shop-dashboard" : "",
+
+  // SOLUSI UTAMA 404:
+  // Saat menggunakan output: "export", hindari penggunaan basePath di next.config karena akan membuat struktur folder 'out/nama-repo/index.html'.
+  // Kita biarkan kosong di sini, dan biarkan GitHub Actions yang menangani penyelarasan path publikasi.
+  basePath: "",
+  assetPrefix: "",
 };
 
 export default nextConfig;
