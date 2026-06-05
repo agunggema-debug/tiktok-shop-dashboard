@@ -6,11 +6,10 @@ const nextConfig = {
     unoptimized: true, // Menonaktifkan optimasi gambar dinamis karena server statis GitHub tidak mendukungnya
   },
 
-  // SOLUSI UTAMA 404:
-  // Saat menggunakan output: "export", hindari penggunaan basePath di next.config karena akan membuat struktur folder 'out/nama-repo/index.html'.
-  // Kita biarkan kosong di sini, dan biarkan GitHub Actions yang menangani penyelarasan path publikasi.
-  basePath: "",
-  assetPrefix: "",
+  // SOLUSI ABSOLUT 404 DI GITHUB PAGES:
+  // Kita harus menggunakan basePath agar semua rute file JavaScript dan CSS statis mengarah ke '/tiktok-shop-dashboard/_next/...'
+  // Namun, kita tidak boleh menggunakan assetPrefix secara bersamaan untuk menghindari duplikasi jalur ganda.
+  basePath: "/tiktok-shop-dashboard",
 };
 
 export default nextConfig;
