@@ -41,7 +41,7 @@ jobs:
         # Menghapus folder cache .next lokal dan folder out lama sebelum melakukan compile baru
         run: |
           rm -rf .next out
-          npm run build -- --no-lint
+          npm run build
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
