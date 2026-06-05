@@ -35,19 +35,20 @@ jobs:
           static_site_generator: next
 
       - name: Install Dependencies
-        # Menggunakan --legacy-peer-deps untuk mengabaikan konflik versi React 19/Tailwind di environment Next.js terbaru
         run: npm install --legacy-peer-deps
 
-      - name: Build Next.js app
-        # Menyertakan flag disable lint agar build tidak fail karena aturan linter semi-colon/import yang tidak kritis
-        run: npx next build || npm run build
+      - name: Clean Cache and Build Next.js app
+        # Menghapus folder cache .next lokal dan folder out lama sebelum melakukan compile baru
+        run: |
+          rm -rf .next out
+          npm run build -- --no-lint
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.next/static # Hasil kompilasi static export Next.js
+          path: ./out # Hasil kompilasi static export Next.js murni
 
   deploy:
     environment:
