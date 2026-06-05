@@ -40,9 +40,11 @@ jobs:
       - name: Clean Cache and Build Next.js app
         # Menghapus folder cache .next lokal dan folder out lama sebelum melakukan compile baru
         run: |
+          rm -f next.config.js
           rm -rf .next out
           npm run build
-          mkdir -p out
+          echo "=== VERIFIKASI ISI FOLDER OUT ==="
+          ls -la out
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
